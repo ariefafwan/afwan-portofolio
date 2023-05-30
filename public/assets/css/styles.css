@@ -1,0 +1,141 @@
+body,
+html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: aliceblue;
+}
+
+.bg-gradient-primary-to-secondary {
+    background: #625292;
+    background: linear-gradient(135deg, #625292 0%, #66A0F9 100%);
+}
+
+.text-gradient {
+    background: -webkit-linear-gradient(315deg, #1e30f3 0%, #66A0F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+.feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none
+}
+
+li {
+    list-style-type: none;
+}
+
+.img {
+    position: relative;
+}
+
+.img .profile-img {
+    width: 300px;
+    margin-left: 35%;
+}
+
+.footer {
+    color: black;
+}
+
+.footer__container {
+    max-width: 1160px;
+    margin: auto;
+}
+
+.footer__top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 20px;
+}
+
+.footer__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: .8rem;
+}
+
+.footer__title {
+    font-size: 32px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__list-link {
+    transition: color 0.25s;
+}
+
+.footer__list-link:hover {
+    color: #625292;
+}
+
+.footer__divider {
+    margin-block: 5px;
+    border: none;
+    border-top: 10px solid rgba(262, 255, 255, 0.1);
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: center;
+    /* gap: 20px; */
+    flex-wrap: wrap;
+}
+
+
+@media (max-width: 576px) {
+    .img .profile-img {
+        margin-top: 20px;
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 576px) {
+    .img .profile-img {
+        margin-top: 20px;
+        width: 350px;
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 768px) {
+    .img .profile-img {
+        margin-left: 25%;
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .img .profile-img {
+        width: 250px;
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .img .profile-img {
+        margin-left: 35%;
+    }
+}

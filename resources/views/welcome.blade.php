@@ -148,27 +148,36 @@
                 <h1 class="text-center mb-4 fw-bolder text-white">Contact Me</h1>
                 <div class="card shadow border-0 rounded-4 mb-2">
                   <div class="card-body p-5">
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible alert-dismissible" role="alert" id="myAlert">
+                          <strong>Hai!</strong> {{ session('success') }}
+                          <button type="button" class="close btn btn-outline-secondary btn-sm" data-dismiss="alert" aria-label="close">
+                            &times;
+                          </button>
+                        </div>
+                    @endif
                     <div class="row gx-5 justify-content-center">
                       <p class="lead fw-normal text-muted text-center mb-2">Let's work together!</p>
-                      <form id="contactForm">
+                      <form action="{{ route('contactme') }}" class="w-full">
+                          @csrf
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                          <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+                          <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
                           <label for="name">Full name</label>
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                          <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                          <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
                           <label for="email">Email address</label>
                         </div>
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                          <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" required />
+                          <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required />
                           <label for="phone">Phone number</label>
                         </div>
                         <!-- Message input-->
                         <div class="form-floating mb-3">
-                          <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+                          <textarea class="form-control" id="message" name="comment" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
                           <label for="message">Message</label>
                         </div>
                         <!-- Submit Button-->
@@ -176,7 +185,7 @@
                           <button class="btn bg-gradient-primary-to-secondary btn-lg text-white" id="submitButton" type="submit">Submit</button>
                         </div>
                       </form>
-                    </div>
+                  </div>
                   </div>
                 </div>
               </div>

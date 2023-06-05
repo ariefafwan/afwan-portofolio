@@ -11,12 +11,6 @@
                         Artikel Terbaru
                     </h5>
                 </div>
-                {{-- <div class="footer__logo bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                    <i class="bi bi-newspaper"></i>
-                </div>
-                <h6 class="footer_title">
-                    Afwan
-                </h6> --}}
                 <ul class="footer__list">
                     <li class="footer__list-item">
                         <a href="" class="footer__list-link">Laravel</a>
@@ -81,7 +75,7 @@
         </div>
         <hr class="footer__divider">
         <div class="footer__bottom">
-            <span class="copyright">Copyright &copy; Afwan 2023</span>
+            <span class="copyright">Copyright &copy; {{ $profile[0]->fullname }} 2023</span>
         </div>
     </div>
     </footer>

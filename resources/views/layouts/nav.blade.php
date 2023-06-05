@@ -1,7 +1,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: aliceblue">
     <div class="container px-3">
-      <a class="navbar-brand fw-bolder text-primary text-gradient" href="index.html">
+      <a class="navbar-brand fw-bolder text-primary text-gradient" href="{{ route('welcome') }}">
         <img src="{{ asset ('assets/img/logo.png') }}" alt="Logo" width="30" height="40" class="align-text-top" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle navigation">

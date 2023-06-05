@@ -9,13 +9,13 @@
               <!-- Header text content-->
               <div class="text-left text-xxl-start">
                 <div>
-                  <h1 class="display-2 fw-bolder text-gradient d-inline">Hi!, I'm Afwan</h1>
+                  <h1 class="display-2 fw-bolder text-gradient d-inline">Hi!, I'm {{ $profile[0]->nickname }}</h1>
                 </div>
                 <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                  <div class="text-uppercase">Web Developer &middot; Designer &middot; Data Engginer</div>
+                  <div class="text-uppercase">{!! $profile[0]->work_as !!}</div>
                 </div>
                 <p class="mb-4 fw-medium">
-                  <span class="text-muted">Fresh Graduate</span>
+                  <span class="text-muted">{{ $profile[0]->desc }}</span>
                 </p>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-left justify-content-xxl-start mb-3">
                   <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">BLOG</a>
@@ -41,76 +41,32 @@
                 <div class="card shadow border-0 rounded-4 mb-1">
                   <div class="card-body p-5">
                     <!-- Professional skills list-->
-                    <p class="lead fw-light mb-4">Fullstack Web Developer. Laravel Enthusiast. Since 2019</p>
-                    <a class="btn btn-primary bg-gradient-primary-to-secondary d-inline-block mb-4" href="#!">
+                    <p class="lead fw-light mb-4">{{ $profile[0]->about }}</p>
+                    <a class="btn btn-primary bg-gradient-primary-to-secondary d-inline-block mb-4" href="{{ asset('storage/resume/'.$profile[0]->cv) }}">
                       <i class="bi bi-download"></i>
-                      Download Resume
+                      Download My Resume
                     </a>
+                    @foreach ($skill_kategori as $sk)
                     <div class="mb-5">
                       <div class="d-flex align-items-center mb-4">
                         <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                          <i class="bi bi-tools"></i>
+                          {!! $sk->icon_svg_bootstrap !!}
                         </div>
                         <h3 class="fw-bolder mb-0">
-                          <span class="text-gradient d-inline">Professional Skills</span>
+                          <span class="text-gradient d-inline">{{ $sk->skill_kategori }} Skills</span>
                         </h3>
                       </div>
                       <div class="row row-cols-1 row-cols-md-3 mb-4">
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SEO/SEM Marketing</div>
-                        </div>
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Statistical Analysis</div>
-                        </div>
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Web Development</div>
-                        </div>
-                      </div>
-                      <div class="row row-cols-1 row-cols-md-3">
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Network Security</div>
-                        </div>
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adobe Software Suite</div>
-                        </div>
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">User Interface Design</div>
-                        </div>
+                        @foreach ($skill as $row)
+                          @if($sk->id == $row->skill_kategori_id)
+                          <div class="col mb-4">
+                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">{{ $row->skills }}</div>
+                          </div>
+                          @endif
+                        @endforeach
                       </div>
                     </div>
-                    <!-- Languages list-->
-                    <div class="mb-5">
-                      <div class="d-flex align-items-center mb-4">
-                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                          <i class="bi bi-code-slash"></i>
-                        </div>
-                        <h3 class="fw-bolder mb-0">
-                          <span class="text-gradient d-inline">Languages Skills</span>
-                        </h3>
-                      </div>
-                      <div class="row row-cols-1 row-cols-md-3 mb-4">
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div>
-                        </div>
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div>
-                        </div>
-                        <div class="col">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div>
-                        </div>
-                      </div>
-                      <div class="row row-cols-1 row-cols-md-3">
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Laravel</div>
-                        </div>
-                        <div class="col mb-4 mb-md-0">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div>
-                        </div>
-                        <div class="col">
-                          <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">PHP</div>
-                        </div>
-                      </div>
-                    </div>
+                    @endforeach
                     <div class="d-flex align-items-center mb-4">
                       <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
                         <i class="bi bi-globe"></i>

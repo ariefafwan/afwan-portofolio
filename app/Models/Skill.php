@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    protected $with = ['skillkategori'];
+
+    public function skillkategori()
+    {
+        return $this->belongsTo(SkillKategori::class);
+    }
 }

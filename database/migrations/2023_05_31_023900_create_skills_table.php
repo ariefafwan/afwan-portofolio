@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('skill_kategori_id')->unsigned();
+            $table->foreign('skill_kategori_id')->references('id')->on('skill_kategoris')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('skills');
             $table->timestamps();
         });
     }

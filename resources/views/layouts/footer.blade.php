@@ -38,19 +38,22 @@
                     </h5>
                 </div>
                 <ul class="footer__list">
+                    <!-- Project -->
+                    @php
+                    $i = 1;
+                    @endphp
+                    @foreach ($project as $row)
                     <li class="footer__list-item">
-                        <a href="" class="footer__list-link">Laravel</a>
+                        <a href="" class="footer__list-link">{{ $row->title }}</a>
                     </li>
-                    <li class="footer__list-item">
-                        <a href="" class="footer__list-link">Git</a>
-                    </li>
-                    <li class="footer__list-item">
-                        <a href="" class="footer__list-link">Pojok</a>
-                    </li>
-                    <li class="footer__list-item">
-                        <a href="" class="footer__list-link">Ntah</a>
-                    </li>
-                    {{-- MORE --}}
+                    @if ($i % 4 == 0)
+                        <div class="clearfix visible-md visible-lg"></div>
+                    @endif
+                    @php
+                        $i++;
+                    @endphp
+                    @endforeach
+                    <!-- Project -->
                 </ul>
             </div>
             {{-- repeat wrapper --}}

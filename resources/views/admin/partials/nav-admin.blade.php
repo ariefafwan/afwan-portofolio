@@ -15,7 +15,11 @@
                 <i class="bi bi-person-circle"></i> Hello! {{ Auth::user()->name }}</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{ route('welcome') }}">Home</a></li>
-                <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#LogoutModal">Logout</a>
+                <li><form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="dropdown-item btn btn-primary">Logout</button>
+                    </form>
+                </li>
             </ul>
         </li>
     </ul>

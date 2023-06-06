@@ -13,7 +13,7 @@
                     <span class="ml-2">Profile</span>
                 </a>
                 <a class="nav-link" href="{{ route('project.index') }}">
-                    <i class="bi bi-terminal-fill"></i>
+                    <i class="bi bi-terminal"></i>
                     <span class="ml-2">Projects</span>
                 </a>
                 <a class="nav-link" href="{{ route('skill.index') }}">

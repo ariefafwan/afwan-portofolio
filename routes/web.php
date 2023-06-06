@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [UserController::class, 'welcome'])->name('welcome');
 Route::get('/contactme', [UserController::class, 'contactme'])->name('contactme');
+Route::get('/myproject', [UserController::class, 'project'])->name('myproject');
+Route::get('/detailproject/{id}', [UserController::class, 'detailproject'])->name('detailproject');
 
 Route::get('afwan-login-auth', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('afwan-login-auth', [LoginController::class, 'login']);
@@ -48,6 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/projectall', [AdminController::class, 'project'])->name('project.index');
     Route::get('/inputmyproject', [AdminController::class, 'createproject'])->name('project.create');
     Route::post('/inputmyproject', [AdminController::class, 'storeproject'])->name('project.store');
+    Route::get('/showmyproject/{id}', [AdminController::class, 'showproject'])->name('project.show');
     Route::get('/editmyproject/{id}', [AdminController::class, 'editproject'])->name('project.edit');
     Route::post('/editmyproject/{id}', [AdminController::class, 'updateproject'])->name('project.update');
     Route::post('/destroymyproject', [AdminController::class, 'destroyproject'])->name('project.destroy');

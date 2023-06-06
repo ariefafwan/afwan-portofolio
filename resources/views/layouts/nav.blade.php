@@ -10,20 +10,20 @@
       <div class="collapse navbar-collapse" id="navbarcontent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small">
           <li class="nav-item">
-            <a class="nav-link fw-bolder text-primary" href="index.html">HOME</a>
+            <a class="nav-link fw-bolder text-primary" href="{{ route('welcome') }}">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fw-bolder text-primary" href="#about">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder text-primary" href="resume.html">BLOG</a>
+            <a class="nav-link fw-bolder text-primary" href="#!">BLOG</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder text-primary" href="projects.html">PROJECTS</a>
+            <a class="nav-link fw-bolder text-primary" href="{{ route('myproject') }}">PROJECTS</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link fw-bolder text-primary" href="#contact">CONTACT</a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>

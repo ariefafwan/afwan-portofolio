@@ -52,13 +52,20 @@ class AdminController extends Controller
             $fileguidebook = $guidebook->getClientOriginalName();
             $img->storeAs('public/project/img/', $fileimg);
             $guidebook->storeAs('public/project/guidebook/', $fileguidebook);
-            $data->gambar = $fileimg;
+            $data->img = $fileimg;
             $data->guidebook = $fileguidebook;
         }
         $data->save();
 
         Alert::success('Success!', 'Project Berhasil ditambahkan');
         return redirect()->route('project.index');
+    }
+
+    public function showproject($id)
+    {
+        $project = Project::findOrFail($id);
+        $page = "Detail Project $project->title";
+        return view('admin.project.show', compact('project', 'page'));
     }
 
     public function editproject($id)
@@ -127,13 +134,13 @@ class AdminController extends Controller
 
     public function updateprofile(Request $request, $id)
     {
-        $work_as = implode('&middot;', $request->work_as);
+        $work = str_replace(",", "&middot;", $request->work_as);
 
         $data = Profile::findOrFail($id);
         $data->nickname = $request->nickname;
         $data->fullname = $request->fullname;
         $data->desc = $request->desc;
-        $data->work_as = $work_as;
+        $data->work_as = $work;
         $data->about = $request->about;
         $cv = $request->file('cv');
         if ($request->validate([

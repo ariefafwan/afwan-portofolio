@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="col img d-flex justify-content-center">
-              <img class="profile-img" src="{{ asset ('assets/img/profile.png') }}" alt="..." />
+                <img class="profile-img" src="{{ asset ('assets/img/profile.png') }}" alt="..." />
             </div>
           </div>
         </div>

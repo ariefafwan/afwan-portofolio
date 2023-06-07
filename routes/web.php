@@ -56,7 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/showmyproject/{id}', [AdminController::class, 'showproject'])->name('project.show');
     Route::get('/editmyproject/{id}', [AdminController::class, 'editproject'])->name('project.edit');
     Route::post('/editmyproject/{id}', [AdminController::class, 'updateproject'])->name('project.update');
-    Route::post('/destroymyproject', [AdminController::class, 'destroyproject'])->name('project.destroy');
+    Route::post('/destroymyproject/{id}', [AdminController::class, 'destroyproject'])->name('project.destroy');
     //profile
     Route::get('/myprofile', [AdminController::class, 'profile'])->name('profile.index');
     Route::get('/editmyprofile/{id}', [AdminController::class, 'editprofile'])->name('profile.edit');

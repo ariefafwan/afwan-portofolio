@@ -18,7 +18,7 @@
                   <span class="text-muted">{{ $profile[0]->desc }}</span>
                 </p>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-left justify-content-xxl-start mb-3">
-                  <a class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#!">BLOG</a>
+                  <a class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ route('blog') }}">BLOG</a>
                   <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ route('myproject') }}">Projects</a>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                   <div class="card-body p-5">
                     <!-- Professional skills list-->
                     <p class="lead fw-light mb-4">{{ $profile[0]->about }}</p>
-                    <a class="btn btn-primary bg-gradient-primary-to-secondary d-inline-block mb-4" href="{{ asset('storage/resume/'.$profile[0]->cv) }}">
+                    <a class="btn btn-primary bg-gradient-primary-to-secondary d-inline-block mb-4" href="{{ asset('storage/profile/cv/'.$profile[0]->cv) }}">
                       <i class="bi bi-download"></i>
                       Download My Resume
                     </a>

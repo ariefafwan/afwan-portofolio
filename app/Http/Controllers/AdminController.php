@@ -45,7 +45,7 @@ class AdminController extends Controller
         $img = $request->file('img');
         $guidebook = $request->file('guidebook');
         if ($request->validate([
-            'img' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'img' => 'required|mimes:png,jpg,jpeg|max:50000',
             'guidebook' => 'required|file:pdf|max:50000'
         ])) {
             $fileimg = $img->getClientOriginalName();
@@ -87,7 +87,7 @@ class AdminController extends Controller
         $img = $request->file('img');
         $guidebook = $request->file('guidebook');
         if ($request->validate([
-            'img' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'img' => 'required|mimes:png,jpg,jpeg|max:50000',
             'guidebook' => 'required|file:pdf|max:50000'
         ])) {
             // hapus yang lama
@@ -98,6 +98,8 @@ class AdminController extends Controller
             $fileguidebook = $guidebook->getClientOriginalName();
             $img->storeAs('public/project/img/', $fileimg);
             $guidebook->storeAs('public/project/guidebook/', $fileguidebook);
+            // $img->move(public_path() . '/storage/project/img/', $fileimg);
+            // $guidebook->move(public_path() . '/storage/project/guidebook/', $fileguidebook);
             $data->gambar = $fileimg;
             $data->guidebook = $fileguidebook;
         }

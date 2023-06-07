@@ -36,7 +36,7 @@ class UserController extends Controller
             'comment' => $comment
         ];
 
-        Mail::to('tmafwan@ariefafwan.com')->send(new ContactMail($contactbody));
+        Mail::to('testing@tmariefafwan.com')->send(new ContactMail($contactbody));
         return redirect()->back()->with('success', 'Thanks for giving me a message, I hope we meet soon');
     }
 

@@ -2,16 +2,16 @@ body,
 html {
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-color: aliceblue;
+    background-color: white;
 }
 
 .bg-gradient-primary-to-secondary {
-    background: #625292;
-    background: linear-gradient(135deg, #625292 0%, #66A0F9 100%);
+    background: #999999;
+    background: linear-gradient(135deg, #191919 0%, #999999 100%);
 }
 
 .text-gradient {
-    background: -webkit-linear-gradient(315deg, #1e30f3 0%, #66A0F9 100%);
+    background: -webkit-linear-gradient(315deg, #191919 0%, #999999 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -72,7 +72,6 @@ li {
 
 .footer__title {
     font-size: 32px;
-    color: black;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -84,11 +83,12 @@ li {
 }
 
 .footer__list-link {
+    color: #191919;
     transition: color 0.25s;
 }
 
 .footer__list-link:hover {
-    color: #625292;
+    color: #000000;
 }
 
 .footer__divider {
@@ -100,7 +100,6 @@ li {
 .footer__bottom {
     display: flex;
     justify-content: center;
-    /* gap: 20px; */
     flex-wrap: wrap;
 }
 

@@ -18,13 +18,13 @@
                   <span class="text-muted">{{ $profile[0]->desc }}</span>
                 </p>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-left justify-content-xxl-start mb-3">
-                  <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">BLOG</a>
-                  <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
+                  <a class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#!">BLOG</a>
+                  <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ route('myproject') }}">Projects</a>
                 </div>
               </div>
             </div>
             <div class="col img d-flex justify-content-center">
-                <img class="profile-img" src="{{ asset ('assets/img/profile.png') }}" alt="..." />
+                <img class="profile-img" src="{{ asset ('assets/img/logos.png') }}" alt="..." />
             </div>
           </div>
         </div>

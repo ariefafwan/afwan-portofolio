@@ -13,9 +13,9 @@
                 </div>
                 <ul class="footer__list">
                     <li class="footer__list-item">
-                        <a href="" class="footer__list-link">Laravel</a>
+                        <a href="" class="footer__list-link"></a>
                     </li>
-                    <li class="footer__list-item">
+                    {{-- <li class="footer__list-item">
                         <a href="" class="footer__list-link">Git</a>
                     </li>
                     <li class="footer__list-item">
@@ -23,7 +23,7 @@
                     </li>
                     <li class="footer__list-item">
                         <a href="" class="footer__list-link">Ntah</a>
-                    </li>
+                    </li> --}}
                     <!-- more -->
                 </ul>
             </div>
@@ -76,7 +76,6 @@
             </div>
             {{-- repeat wrapper --}}
         </div>
-        <hr class="footer__divider">
         <div class="footer__bottom">
             <span class="copyright">Copyright &copy; {{ $profile[0]->fullname }} 2023</span>
         </div>

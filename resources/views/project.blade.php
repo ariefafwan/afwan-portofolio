@@ -24,7 +24,7 @@
                                     <h6>Author : {{ $row->author }}, {{ $row->tahun }}</h6>
                                 </div>
                                 <h4 class="card-title">
-                                    <a href="{{ route('detailproject', $row->id) }}">{{ $row->title }}</a>
+                                    <a class="text-dark" href="{{ route('detailproject', $row->id) }}">{{ $row->title }}</a>
                                 </h4>
                                 <p class="card-text">{{ Str::limit(strip_tags($row->detail),50) }}...</p>
                             </div>

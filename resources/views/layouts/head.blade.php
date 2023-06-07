@@ -6,7 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="Afwan" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Arief Afwan</title>
+    <title>{{ $page }} | Arief Afwan</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset ('favicon/favicon.ico') }}" />
     <!-- Custom Google font-->

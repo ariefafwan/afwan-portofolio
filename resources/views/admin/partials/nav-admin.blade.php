@@ -1,7 +1,7 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-5" href="{{ route('welcome') }}">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" width="30" height="40" class="align-text-top ml-5" />
+        <img src="{{ asset('assets/img/log.png') }}" alt="Logo" width="30" height="40" class="align-text-top ml-5" />
     </a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="bi bi-list"></i></button>

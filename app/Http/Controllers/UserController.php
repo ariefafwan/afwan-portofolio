@@ -19,7 +19,8 @@ class UserController extends Controller
         $project = Project::latest()->get();
         $skill_kategori = SkillKategori::has('skill')->get();
         $skill = Skill::all();
-        return view('welcome', compact('profile', 'skill_kategori', 'skill', 'project'));
+        $page = "Welcome";
+        return view('welcome', compact('profile', 'skill_kategori', 'skill', 'project', 'page'));
     }
     public function contactme(Request $request)
     {
@@ -55,5 +56,13 @@ class UserController extends Controller
         $project = Project::latest()->get();
         $page = "Detail Project";
         return view('detailproject', compact('data', 'project', 'page', 'profile'));
+    }
+
+    public function blog()
+    {
+        $page = "Blog";
+        $profile = Profile::all();
+        $project = Project::latest()->get();
+        return view('blog.index', compact('page', 'project', 'profile'));
     }
 }

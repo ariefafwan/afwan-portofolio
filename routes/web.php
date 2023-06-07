@@ -25,8 +25,11 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [UserController::class, 'welcome'])->name('welcome');
 Route::get('/contactme', [UserController::class, 'contactme'])->name('contactme');
+
 Route::get('/myproject', [UserController::class, 'project'])->name('myproject');
 Route::get('/detailproject/{id}', [UserController::class, 'detailproject'])->name('detailproject');
+
+Route::get('/blog', [UserController::class, 'blog'])->name('blog');
 
 Route::get('afwan-login-auth', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('afwan-login-auth', [LoginController::class, 'login']);

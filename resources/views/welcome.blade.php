@@ -42,7 +42,7 @@
                   <div class="card-body p-5">
                     <!-- Professional skills list-->
                     <p class="lead fw-light mb-4">{{ $profile[0]->about }}</p>
-                    <a class="btn btn-primary bg-gradient-primary-to-secondary d-inline-block mb-4" href="{{ asset('storage/resume/'.$profile[0]->cv) }}">
+                    <a class="btn btn-primary bg-gradient-primary-to-secondary d-inline-block mb-4" href="{{ asset('storage/profile/cv/'.$profile[0]->cv) }}">
                       <i class="bi bi-download"></i>
                       Download My Resume
                     </a>

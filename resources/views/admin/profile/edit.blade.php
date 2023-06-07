@@ -26,11 +26,11 @@
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label fw-bold">Description</label>
-            <textarea class="form-control" id="desc" name="desc" rows="3">{{ old('desc', $profile->desc) }}"</textarea>
+            <textarea class="form-control" id="desc" name="desc" rows="3">{{ old('desc', $profile->desc) }}</textarea>
         </div>
         <div class="mb-3">
-            <label for="gambar" class="form-label fw-bold">Upload Gambar</label>
-            <input class="form-control" type="file" id="gambar" name="gambar">
+            <label for="gambar" class="form-label fw-bold">Upload CV</label>
+            <input class="form-control" type="file" id="cv" name="cv">
         </div>
         <div class="button d-flex justify-content-center">
             <button type="submit" class="btn btn-warning">

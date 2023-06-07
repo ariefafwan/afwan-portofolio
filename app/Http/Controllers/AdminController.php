@@ -98,6 +98,8 @@ class AdminController extends Controller
             $fileguidebook = $guidebook->getClientOriginalName();
             $img->storeAs('public/project/img/', $fileimg);
             $guidebook->storeAs('public/project/guidebook/', $fileguidebook);
+            // $img->move(public_path() . '/storage/project/img/', $fileimg);
+            // $guidebook->move(public_path() . '/storage/project/guidebook/', $fileguidebook);
             $data->gambar = $fileimg;
             $data->guidebook = $fileguidebook;
         }

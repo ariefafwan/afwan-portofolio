@@ -9,9 +9,9 @@ class Skill extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $with = ['skillkategori'];
+    protected $with = ['skill_kategori'];
 
-    public function skillkategori()
+    public function skill_kategori()
     {
         return $this->belongsTo(SkillKategori::class);
     }

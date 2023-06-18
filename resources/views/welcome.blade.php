@@ -151,3 +151,13 @@
       </section>
 
 @endsection
+
+@section('js')
+<script>
+  $(document).ready(function(){
+    $(".close").click(function(){
+      $("#myAlert").alert("close");
+    });
+  });
+</script>
+@endsection

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -63,17 +64,21 @@ Route::middleware('auth')->group(function () {
     Route::post('.editmyprofile/{id}', [AdminController::class, 'updateprofile'])->name('profile.update');
     //skillkategori
     Route::get('/myskills', [AdminController::class, 'skill'])->name('skill.index');
-    Route::get('/cretenewskillkategori', [AdminController::class, 'createskillkategori'])->name('skillkategori.create');
     Route::post('/cretenewskillkategori', [AdminController::class, 'storeskillkategori'])->name('skillkategori.store');
-    Route::get('/editmyskillkategori/{id}', [AdminController::class, 'editskillkategori'])->name('skillkategori.edit');
+    // Route::get('/editmyskillkategori/{id}', [AdminController::class, 'editskillkategori'])->name('skillkategori.edit');
     Route::post('/editmyskillkategori/{id}', [AdminController::class, 'updateskillkategori'])->name('skillkategori.update');
     Route::post('/destroyskillkategori/{id}', [AdminController::class, 'destroyskillkategori'])->name('skillkategori.destroy');
     //skills
-    Route::get('/cratemynewskills', [AdminController::class, 'createskill'])->name('skill.create');
     Route::post('/cratemynewskills', [AdminController::class, 'storeskill'])->name('skill.store');
     Route::get('/editmyskill/{id}', [AdminController::class, 'editskill'])->name('skill.edit');
-    Route::post('/editmyskill/{id}', [AdminController::class, 'updateskill'])->name('skill.update');
+    Route::post('/updatemyskill', [AdminController::class, 'updateskill'])->name('skill.update');
     Route::post('/destroyskill/{id}', [AdminController::class, 'destroyskill'])->name('skill.destroy');
+    //kategoriblog
+    Route::get('/kategoriblog', [BlogController::class, 'kategoriblog'])->name('kategori.index');
+    Route::get('/editkategori/{id}', [BlogController::class, 'editkategori'])->name('kategori.edit');
+    Route::post('/kategoriblog', [BlogController::class, 'storekategori'])->name('kategori.store');
+    Route::post('/updatekategoriblog', [BlogController::class, 'updatekategori'])->name('kategori.update');
+    Route::post('/destroykategori/{id}', [BlogController::class, 'destroykategori'])->name('kategori.destroy');
 });
 
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');

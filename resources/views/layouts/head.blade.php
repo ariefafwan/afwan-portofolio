@@ -31,12 +31,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset ('assets/js/scripts.js') }}"></script>
-        <script>
-          $(document).ready(function(){
-            $(".close").click(function(){
-              $("#myAlert").alert("close");
-            });
-          });
-        </script>
+        @yield('js')
   </body>
 </html>

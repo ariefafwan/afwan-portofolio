@@ -165,14 +165,14 @@ class AdminController extends Controller
         $skillkategori = SkillKategori::all();
         $skil = Skill::all();
         $page = "Skill Anda";
-        return view('admin.skill.index', compact('skillkategori', 'skill', 'page'));
+        return view('admin.skill.index', compact('skillkategori', 'skil', 'page'));
     }
 
-    public function createskillkategori()
-    {
-        $page = "Tambah Kategori Skills";
-        return view('admin.skill.create', compact('page'));
-    }
+    // public function createskillkategori()
+    // {
+    //     $page = "Tambah Kategori Skills";
+    //     return view('admin.skill.create', compact('page'));
+    // }
 
     public function storeskillkategori(Request $request, $id)
     {
@@ -186,7 +186,7 @@ class AdminController extends Controller
         return redirect()->route('skill.index');
     }
 
-    public function storeskill(Request $request, $id)
+    public function storeskill(Request $request)
     {
         $data = new Skill;
         $data->skill_kategori_id = $request->skill_kategori_id;
@@ -197,19 +197,18 @@ class AdminController extends Controller
         return redirect()->route('skill.index');
     }
 
-    public function createskill()
-    {
-        $page = "Tambah Skills";
-        $skillkategori = SkillKategori::all();
-        return view('admin.skill.skills.create', compact('page', 'skillkategori'));
-    }
+    // public function createskill()
+    // {
+    //     $page = "Tambah Skills";
+    //     $skillkategori = SkillKategori::all();
+    //     return view('admin.skill.skills.create', compact('page', 'skillkategori'));
+    // }
 
-    public function editskillkategori($id)
-    {
-        $skillkategori = SkillKategori::findOdFail($id);
-        $page = "Edit Kategori Skill";
-        return view('admin.skill.edit', compact('skillkategori', 'page'));
-    }
+    // public function editskillkategori($id)
+    // {
+    //     $skillkategori = SkillKategori::findOdFail($id);
+    //     return json_encode($skillkategori);
+    // }
 
     public function updateskillkategori(Request $request, $id)
     {
@@ -224,14 +223,17 @@ class AdminController extends Controller
     }
     public function editskill($id)
     {
-        $skill = Skill::findOdFail($id);
-        $page = "Edit Kategori Skill";
-        return view('admin.skill.skills.edit', compact('skill', 'page'));
+        $skill = Skill::findOrFail($id);
+        return json_encode($skill);
     }
 
     public function updateskill(Request $request, $id)
     {
-        $data = Skill::findOrFail($id);
+        $skill = Skill::where('id', $request->id)->get();
+        foreach ($skill as $row) {
+            $id = $row->id;
+            $data = Skill::findOrFail($id);
+        }
         $data->skill_kategori_id = $request->skill_kategori_id;
         $data->skills = $request->skills;
         $data->save();

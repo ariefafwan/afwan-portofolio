@@ -1,7 +1,8 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-5" href="{{ route('welcome') }}">
-        <img src="{{ asset('assets/img/log.png') }}" alt="Logo" width="30" height="40" class="align-text-top ml-5" />
+    <a class="navbar-brand ps-4" href="{{ route('welcome') }}">
+        <img src="{{ asset('assets/img/log.png') }}" alt="Logo" width="30" height="40" class="align-text-top" />
+        &nbspDashboard
     </a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="bi bi-list"></i></button>
@@ -14,11 +15,12 @@
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-person-circle"></i> Hello! {{ Auth::user()->name }}</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{{ route('welcome') }}">Home</a></li>
-                <li><form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="dropdown-item btn btn-primary">Logout</button>
-                    </form>
+                <li><a class="dropdown-item" href="{{ route('welcome') }}"><i class="bi bi-house"></i>&nbspHome</a></li>
+                <li>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <i class="bi bi-door-open"></i>
+                        &nbspLogout
+                    </a>
                 </li>
             </ul>
         </li>

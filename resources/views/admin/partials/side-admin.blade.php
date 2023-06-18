@@ -5,20 +5,25 @@
                 <div class="sb-sidenav-menu-heading">Home</div>
                 <a class="nav-link " href="{{ route('home') }}">
                     <i class="bi bi-laptop"></i>
-                    <span class="ml-2">Dashboard</span>
+                    &nbspDashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Menu Admin</div>
                 <a class="nav-link" href="{{ route('profile.index') }}">
                     <i class="bi bi-gear-wide-connected"></i>
-                    <span class="ml-2">Profile</span>
+                    &nbspProfile
                 </a>
                 <a class="nav-link" href="{{ route('project.index') }}">
                     <i class="bi bi-terminal"></i>
-                    <span class="ml-2">Projects</span>
+                    &nbspProjects
                 </a>
                 <a class="nav-link" href="{{ route('skill.index') }}">
                     <i class="bi bi-lamp-fill"></i>
-                    <span class="ml-2">Skills</span>
+                    &nbspSkills
+                </a>
+                <div class="sb-sidenav-menu-heading">Blog</div>
+                <a class="nav-link" href="{{ route('kategori.index') }}">
+                    <i class="bi bi-lamp-fill"></i>
+                    &nbspKategori Blog
                 </a>
                 {{-- <div class="sb-sidenav-menu-heading">Diagnosa</div>
                 <a class="nav-link" href="{{ route('diagnosa.create') }}">

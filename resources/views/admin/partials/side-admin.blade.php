@@ -22,14 +22,13 @@
                 </a>
                 <div class="sb-sidenav-menu-heading">Blog</div>
                 <a class="nav-link" href="{{ route('kategori.index') }}">
-                    <i class="bi bi-lamp-fill"></i>
+                    <i class="bi bi-tags"></i>
                     &nbspKategori Blog
                 </a>
-                {{-- <div class="sb-sidenav-menu-heading">Diagnosa</div>
-                <a class="nav-link" href="{{ route('diagnosa.create') }}">
-                    <i class="fa fa-search-plus" aria-hidden="true"></i>
-                    <span class="ml-2">Diagnosa</span>
-                </a> --}}
+                <a class="nav-link" href="{{ route('blog.index') }}">
+                    <i class="bi bi-newspaper"></i>
+                    &nbspBlog
+                </a>
             </div>
         </div>
     </nav>

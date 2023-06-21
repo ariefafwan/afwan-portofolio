@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->bigInteger('kategori_blog_id')->unsigned();
+            $table->foreign('kategori_blog_id')->references('id')->on('kategori_blogs')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('slug');
+            $table->string('img');
+            $table->longText('text');
+            $table->string('author');
             $table->timestamps();
         });
     }

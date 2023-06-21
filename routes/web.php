@@ -79,6 +79,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/kategoriblog', [BlogController::class, 'storekategori'])->name('kategori.store');
     Route::post('/updatekategoriblog', [BlogController::class, 'updatekategori'])->name('kategori.update');
     Route::post('/destroykategori/{id}', [BlogController::class, 'destroykategori'])->name('kategori.destroy');
+    //blog
+    Route::get('/daftarartikelanda', [BlogController::class, 'createartikel'])->name('blog.index');
+    Route::post('/tambahartikel', [BlogController::class, 'storeartikel'])->name('blog.store');
+    Route::get('/editartikel/{id}', [BlogController::class, 'editartikel'])->name('blog.edit');
+    Route::get('/showartikel/{id}', [BlogController::class, 'showartikel'])->name('blog.show');
+    Route::post('/updateartikel/{id}', [BlogController::class, 'updateartikel'])->name('blog.update');
+    Route::post('/destroyartikel/{id}', [BlogController::class, 'destroyartikel'])->name('blog.destroy');
 });
 
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');

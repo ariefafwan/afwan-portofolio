@@ -21,6 +21,7 @@
                                 <th class="text-center">Copyright</th>
                                 <th class="text-center">Progres</th>
                                 <th class="text-center">Guidebook</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,6 +32,13 @@
                                 <td align="justify">{{ $row->url }}</td>
                                 <td align="center">{{ $row->author }} {{ $row->tahun }}</td>
                                 <td align="center">{{ $row->progres }}</td>
+                                <td align="center">
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ asset('storage/project/guidebook/'.$row->guidebook) }}" class="btn btn-primary">
+                                            <i class="bi bi-download"></i>
+                                        </a>
+                                    </div>
+                                </td>
                                 <td align="center">
                                     <div class="d-flex justify-content-evenly">
                                     <a href="{{ route('project.show',$row->id) }}" class="btn btn-info">

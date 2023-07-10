@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use App\Models\Contact;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Skill;
@@ -15,12 +17,14 @@ class UserController extends Controller
 {
     public function welcome()
     {
+        SEOMeta::setTitle('Welcome');
+        SEOMeta::setDescription("Teuku M Arief Afwan, Portofolio Arief Afwan, Hi!, I'm Afwan, 23 years old and a fresh graduate with a degree in engineering, majoring in information systems. I like to learn many things, especially programming, I master the PHP Framework Laravel programming language, Javascript, as well as HTML & CSS markup. Thank You!");
+        SEOTools::setDescription("Teuku M Arief Afwan, Portofolio Arief Afwan, Hi!, I'm Afwan, 23 years old and a fresh graduate with a degree in engineering, majoring in information systems. I like to learn many things, especially programming, I master the PHP Framework Laravel programming language, Javascript, as well as HTML & CSS markup. Thank You!");
         $profile = Profile::all();
         $project = Project::latest()->get();
         $skill_kategori = SkillKategori::has('skill')->get();
         $skill = Skill::all();
-        $page = "Welcome";
-        return view('welcome', compact('profile', 'skill_kategori', 'skill', 'project', 'page'));
+        return view('welcome', compact('profile', 'skill_kategori', 'skill', 'project'));
     }
     public function contactme(Request $request)
     {
@@ -63,6 +67,8 @@ class UserController extends Controller
         $page = "Blog";
         $profile = Profile::all();
         $project = Project::latest()->get();
-        return view('blog.index', compact('page', 'project', 'profile'));
+        $skill_kategori = SkillKategori::has('skill')->get();
+        $skill = Skill::all();
+        return view('blog.index', compact('page', 'project', 'profile', 'skill_kategori', 'skill'));
     }
 }

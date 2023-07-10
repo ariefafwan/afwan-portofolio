@@ -28,7 +28,7 @@
                         <tbody>
                             @foreach($skil as $index => $row)
                             <tr>
-                                <td align="center" scope="row">{{ $index + 1 }}</td>                                
+                                <td align="center" scope="row">{{ $skil->count() * ($skil->currentPage() - 1) + $loop->iteration }}</td>                                
                                 <td align="left">{{ $row->skill_kategori->skill_kategori }}</td>
                                 <td align="left">{{ $row->skills }}</td>
                                 <td>

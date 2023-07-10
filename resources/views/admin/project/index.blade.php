@@ -27,7 +27,7 @@
                         <tbody>
                             @foreach($project as $index => $row)
                             <tr>
-                                <td align="center" scope="row">{{ $index + 1 }}</td>
+                                <td align="center" scope="row">{{ $project->count() * ($project->currentPage() - 1) + $loop->iteration }}</td>
                                 <td align="left">{{ $row->title }}</td>
                                 <td align="justify">{{ $row->url }}</td>
                                 <td align="center">{{ $row->author }} {{ $row->tahun }}</td>

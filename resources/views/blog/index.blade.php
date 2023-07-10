@@ -1,23 +1,41 @@
 @extends('layouts.head')
 
-@section('welcome')
-      <!-- Header-->
-      <header class="py-5 mt-5">
-        <div class="container py-5 mt-5">
-          <div class="row gx-5 align-items-start">
-            <div class="col">
-              <!-- Header text content-->
-              <div class="container px-4 px-lg-5 text-center">
-                <h2 class="display-5 fw-bolder mb-2">
-                    <span class="text-gradient d-inline">Will Come Back Soon</span>
-                  </h2>
-                <a class="btn btn-dark btn-lg" href="{{ route('welcome') }}"><i class="bi bi-house"></i>&nbspHome Page</a>
-              </div>
+@section('css')
+<link href="{{ asset('assets/css/index.css') }}" rel="stylesheet" />
+@endsection
 
-            </div>
+@section('body')
+    
+    <main id="main">
+      <!-- ======= About Section ======= -->
+      <section id="about" class="about my-5">
+        <div class="container" data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-xxl-8">
+              <div class="text-center">
+                <header class="section-header">
+                  <!-- <h2>Our Values</h2> -->
+                  <p>Artikel Terbaru</p>
+                </header>
+                <div class="px-4">
+                  <a class="btn btn-primary btn-lg" href="{{ route('welcome') }}"><i class="bi bi-house"></i>&nbspHome Page</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </header>
+      </section>
+      <!-- End About Section -->
+    </main>
+@endsection
 
+@section('js')
+<script src="{{ asset('assets/js/main.js') }}"></script>
+<script>
+  $(document).ready(function(){
+    $(".close").click(function(){
+      $("#myAlert").alert("close");
+    });
+  });
+</script>
 @endsection

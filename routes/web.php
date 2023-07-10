@@ -6,7 +6,9 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -79,6 +81,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/kategoriblog', [BlogController::class, 'storekategori'])->name('kategori.store');
     Route::post('/updatekategoriblog', [BlogController::class, 'updatekategori'])->name('kategori.update');
     Route::post('/destroykategori/{id}', [BlogController::class, 'destroykategori'])->name('kategori.destroy');
+    //tag
+    Route::get('/tagmanager', [TagController::class, 'index'])->name('tag.index');
+    Route::post('/storetag', [TagController::class, 'storetag'])->name('tag.store');
+    Route::get('/jsontag/{id}', [TagController::class, 'edittagjson'])->name('tag.edit');
+    Route::post('/updatetag', [TagController::class, 'updatetag'])->name('tag.update');
+    Route::post('/destroytag/{id}', [TagController::class, 'destroytag'])->name('tag.destroy');
     //blog
     Route::get('/daftarartikelanda', [BlogController::class, 'createartikel'])->name('blog.index');
     Route::post('/tambahartikel', [BlogController::class, 'storeartikel'])->name('blog.store');

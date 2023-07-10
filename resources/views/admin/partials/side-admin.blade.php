@@ -25,6 +25,10 @@
                     <i class="bi bi-tags"></i>
                     &nbspKategori Blog
                 </a>
+                <a class="nav-link" href="{{ route('tag.index') }}">
+                    <i class="bi bi-tags"></i>
+                    &nbspTag Blog
+                </a>
                 <a class="nav-link" href="{{ route('blog.index') }}">
                     <i class="bi bi-newspaper"></i>
                     &nbspBlog

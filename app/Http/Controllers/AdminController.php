@@ -163,7 +163,7 @@ class AdminController extends Controller
     public function skill()
     {
         $skillkategori = SkillKategori::all();
-        $skil = Skill::all();
+        $skil = Skill::paginate('5');
         $page = "Skill Anda";
         return view('admin.skill.index', compact('skillkategori', 'skil', 'page'));
     }
